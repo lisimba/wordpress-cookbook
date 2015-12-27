@@ -52,7 +52,7 @@ if is_local_host? db['host']
 
   socket = "/var/run/mysql-#{db['instance_name']}/mysqld.sock"
 
-  if node['platform_family'] == 'debian'
+  if %(debian ubuntu).include? node['platform_family']
     link '/var/run/mysqld/mysqld.sock' do
       to socket
       not_if 'test -f /var/run/mysqld/mysqld.sock'
