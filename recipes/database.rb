@@ -22,6 +22,7 @@
 
 mysql_client 'default' do
   action :create
+  version node['wordpress']['db']['mysql_version']
   not_if { node['platform_family'] == 'windows' }
 end
 
