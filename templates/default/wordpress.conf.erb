@@ -5,7 +5,7 @@
 
   <Directory <%= @params[:docroot] %>>
     Options FollowSymLinks
-    AllowOverride FileInfo Options
+    AllowOverride FileInfo Options Limit
     <% if node['apache']['version'] == '2.4' %>
     Require all granted
     <% else %>
